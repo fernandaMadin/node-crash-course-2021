@@ -1,10 +1,15 @@
 var express = require('express');
-var videosController = require('../controllers/videosController');
+var {
+	getVideoList,
+	saveVideo,
+	updateVideo,
+	deleteVideo,
+} = require('../controllers/videos');
 var api = express.Router();
 
-api.get('/getVideoList', videosController.getVideoList);
-api.post('/saveVideo', videosController.saveVideo);
-api.put('/updateVideo', videosController.updateVideo);
-api.delete('/deleteVideo', videosController.deleteVideo);
+api.get('/getVideoList', getVideoList);
+api.post('/saveVideo', saveVideo);
+api.put('/updateVideo', updateVideo);
+api.delete('/deleteVideo', deleteVideo);
 
 module.exports = api;
